@@ -9,10 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-email/button": "0.0.15",
+    "@react-email/components": "0.0.17",
+    "@react-email/font": "0.0.6",
+    "@react-email/head": "0.0.8",
+    "@react-email/heading": "0.0.12",
+    "@react-email/html": "0.0.8",
+    "@react-email/preview": "0.0.9",
+    "@react-email/row": "0.0.8",
+    "@react-email/section": "^0.0.12",
+    "@react-email/text": "0.0.8",
     "mongoose": "^8.3.4",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "^1.10.1",
+    "resend": "^3.2.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
