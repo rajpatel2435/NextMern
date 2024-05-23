@@ -1,3 +1,4 @@
+
 import { auth, signOut } from "@/auth";
 import Image from "next/image";
 import { Redirect } from "next";
@@ -34,7 +35,14 @@ export default  async function home(){
       {session?.user?.email}
 
       <Image src={session?.user?.image} width={200} height={200} alt={session?.user?.name}/>
+    
+<button onClick={async () => {
+  "use server"
+  await signOut({ redirectTo: '/' })
+}}>Sign Out</button> 
 
+
+    
 
 
     </div>
