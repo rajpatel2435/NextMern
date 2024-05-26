@@ -72,7 +72,7 @@ const onsubmit=async (data: Z.infer< typeof signInSchema>)=>{
       expires: 1 / 24, // 1 hour
     });
 
-    router.replace('/')
+    router.replace('/user-profile');
     setIsSubmitting(false);
 } catch (error) {
     

@@ -36,6 +36,7 @@
     "js-cookie": "^3.0.5",
     "json": "^11.0.0",
     "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.379.0",
     "mongoose": "^8.3.4",
     "next": "14.2.3",

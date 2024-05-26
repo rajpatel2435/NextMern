@@ -26,7 +26,7 @@ if(existingUserVerified){
 
   console.log(comparePassword);
 
-  const token = jwt.sign({ userId: existingUserVerified.id }, "fffffffzdvfgdngndncgm", {
+  const token = jwt.sign({ user: existingUserVerified }, "fffffffzdvfgdngndncgm", {
     expiresIn: '60m',
   })
 
