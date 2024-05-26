@@ -6,16 +6,15 @@ import bcrypt from "bcryptjs"
 
 export async function POST(request: Request){
     await dbConnect()
-
+    console.log(request);
     try {
         // destructuring assignment
         // request.json() returns an object with properties username, email, and password
         const {username,email,password}=await request.json();
 
-        const existingUserVerified= await UserModel.findOne({
-            username,
-            isVerified:true
-        });
+        console.log(request);
+
+        const existingUserVerified= await UserModel.findOne({ username , isVerified: true });
 
 if(existingUserVerified){
     return Response.json({
@@ -69,14 +68,14 @@ if(existingUserEmail){
 
 }
 
-const emailResponse= await sendVerificationEmail(email,username,verifyCode);
+// const emailResponse= await sendVerificationEmail(email,username,verifyCode);
 
-if(!emailResponse.success){
-    return Response.json({
-        success:false,
-        message:emailResponse.message
-    },{status:500})
-}
+// if(!emailResponse.success){
+//     return Response.json({
+//         success:false,
+//         message:emailResponse.message
+//     },{status:500})
+// }
 
 return Response.json({
     success:true,

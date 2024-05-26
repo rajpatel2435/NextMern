@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.14",
     "@auth/prisma-adapter": "^2.1.0",
     "@react-email/button": "0.0.15",
     "@react-email/components": "0.0.17",
@@ -20,6 +21,7 @@
     "@react-email/row": "0.0.8",
     "@react-email/section": "^0.0.12",
     "@react-email/text": "0.0.8",
+    "ai": "^3.1.13",
     "auth": "^1.0.2",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",

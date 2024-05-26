@@ -38,11 +38,11 @@ export default  async function home(){
     
 <button onClick={async () => {
   "use server"
-  await signOut({ redirectTo: '/' })
+  await signOut()
 }}>Sign Out</button> 
 
 
-    
+
 
 
     </div>
