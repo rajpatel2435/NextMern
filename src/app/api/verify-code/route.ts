@@ -10,14 +10,14 @@ import UserModel from "@/model/User";
 
 ;
         const { username, code}= await request.json();
-
+console.log(username)
 
         const decodedUserName= decodeURIComponent(username);
 
-
+console.log(decodedUserName);
         const user= await UserModel.findOne({ username: decodedUserName});
 
-        
+        console.log(user);
 
 
 

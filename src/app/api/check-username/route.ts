@@ -23,7 +23,7 @@ export async function GET(request: Request) {
     await dbConnect();
 
     try {
-        console.log(request.url);
+  
         const { searchParams }= new URL( request.url);
         const queryParams = {
             username: searchParams.get('username')
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
 
         const result:any  = usernameValidation.safeParse(queryParams.username);
 
-        console.log(result);
+
 
         if(!result.success){
 
@@ -80,6 +80,6 @@ export async function GET(request: Request) {
             status:200
         }
     );
-    
+
     }
 }

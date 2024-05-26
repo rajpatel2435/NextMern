@@ -6,23 +6,33 @@ import bcrypt from "bcryptjs"
 
 export async function POST(request: Request){
     await dbConnect()
-    console.log(request);
+
     try {
         // destructuring assignment
         // request.json() returns an object with properties username, email, and password
         const {username,email,password}=await request.json();
 
-        console.log(request);
 
-        const existingUserVerified= await UserModel.findOne({ username , isVerified: true });
+
+        const existingUserVerified= await UserModel.findOne({ username });
 
 if(existingUserVerified){
+
+    if(existingUserVerified.isVerified){
     return Response.json({
         message:"user is already registered with this username"
     },
 {
-    status:400
+    status:201
 })
+    }else{
+        return Response.json({
+            message:"user is already registered. please verify this"
+        },
+    {
+        status:201
+    })
+    }
 }
 
 const existingUserEmail=await UserModel.findOne({email});
