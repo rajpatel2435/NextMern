@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import {jwtDecode} from 'jwt-decode';
 import { JwtPayload } from 'jwt-decode';
 function page() {
+    // set type in usestate
     const [decodedToken, setDecodedToken] = useState<any>('');
 
     useEffect(() => {
