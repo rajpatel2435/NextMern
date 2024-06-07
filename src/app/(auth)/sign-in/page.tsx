@@ -19,7 +19,7 @@ import Cookies from 'js-cookie';
 
 
 
-function page() {
+function Page() {
   
     // defining the state
     const [username,setUsername]= useState('');
@@ -153,4 +153,4 @@ const onsubmit=async (data: Z.infer< typeof signInSchema>)=>{
   )
 }
 
-export default page
+export default Page

@@ -34,7 +34,7 @@ export default  async function home(){
       {session?.user?.name}
       {session?.user?.email}
 
-      <Image src={session?.user?.image} width={200} height={200} alt={session?.user?.name}/>
+      <Image src={session?.user?.image!} width={200} height={200} alt={session?.user?.name!}/>
     
 <button onClick={async () => {
   "use server"

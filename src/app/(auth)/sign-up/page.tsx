@@ -17,7 +17,7 @@ import { Loader2 } from 'lucide-react'
 
 
 
-function page() {
+function Page() {
   
     // defining the state
     const [username,setUsername]= useState('');
@@ -31,7 +31,7 @@ function page() {
     //  it directly request to backend server
 // debounce add the 300 delay before sending to server
 
-const [debouncedValueUsername, setUsernameValue] = useDebounceValue(username, 1000)
+   const [debouncedValueUsername, setUsernameValue] = useDebounceValue(username, 1000)
 
 
     // to fire the message Ui
@@ -198,4 +198,4 @@ const onsubmit=async (data: Z.infer< typeof signUpSchema>)=>{
   )
 }
 
-export default page
+export default Page

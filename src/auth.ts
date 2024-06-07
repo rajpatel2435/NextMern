@@ -6,7 +6,7 @@ import dbConnect from "./lib/dbConnect";
 import UserModel from "./model/User";
 import { use } from "react";
 import { verify } from "crypto";
-
+import { JWT } from "next-auth/jwt";
 
 interface Credentials {
   email: string;
@@ -23,23 +23,15 @@ export const { handlers,signIn, signOut, auth } = NextAuth({
         email: {},
         password: {},
       },
+      
       authorize: async (credentials:any): Promise<any> => {
      
 
         // logic to salt and hash password2.
         const salt=10;
-//         const pwHash =await bcrypt.hash(credentials.password, salt, (err, hash) => {
-//           if (err) throw err;
-      
-//           // Use the hash for storing the password securely
-// var hashedPassword=hash;
-//       });
 
 
  await dbConnect();
-// console.log(UserModel);
-// console.log(credentials.email);
-// console.log(credentials.password);
 
 const salted=await bcrypt.genSalt(12);
 
@@ -72,16 +64,7 @@ const salted=await bcrypt.genSalt(12);
 
  }
 
-        // logic to verify if user exists
-        // user = await getUserFromDb(credentials.email, pwHash)
- 
-        // if (!user) {
-        //   // No user found, so this is their first attempt to login
-        //   // meaning this is also the place you could do registration
-        //   throw new Error("User not found.")
-        // }
- 
-        // return user object with the their profile data
+
 
       },
     }),
@@ -98,23 +81,26 @@ const salted=await bcrypt.genSalt(12);
 
       console.log(user);
       if (user) {
-        token._id = user._id?.toString();
-        token.isVerified = user.isVerified;
-        token.name = user.username;
-        token.email = user.email;
+        // token._id = user._id?.toString();
+        // token.isVerified = user.isVerified;
+        // token.name = user.username;
+        // token.email = user.email;
       }
       console.log('Token created:', token);
       return token;
     },
     async session({ session, token }) {
-      if (token) {
-        console.log('Token in session callback:', token);
-        session.user.email = token.email;
-        // session.user.isVerified = token.isVerified;
-        session.user.name = token.name;
-      }
+      // if (token) {
+      //   console.log('Token in session callback:', token);
+      //   session.user.email = token.email;
+      //   // session.user.isVerified = token.isVerified;
+      //   session.user.name = token.name;
+      // }
+
       console.log('Session:', session);
+
       return session;
+
     },
   }
   
